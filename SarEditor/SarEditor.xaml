@@ -1,0 +1,60 @@
+﻿<UserControl x:Name="sarEditor"
+    x:Class="SardineFish.UWP.Controls.SarEditor"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SardineFish.UWP.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400" Background="#FF171717" BorderThickness="3,0,0,0" Foreground="White" FontFamily="Consolas">
+
+    <Grid Background="{Binding Background, ElementName=sarEditor}" BorderBrush="{Binding BorderBrush, ElementName=sarEditor}">
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" MinWidth="{Binding ActualWidth, ElementName=sarEditor, Mode=OneWay}" MinHeight="{Binding ActualHeight, ElementName=sarEditor, Mode=OneWay}" Orientation="Horizontal">
+                <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF292929" Padding="0,0,10,0" MinWidth="50">
+                    <RichTextBlock VerticalAlignment="Top" MinHeight="{Binding ActualHeight, ElementName=sarEditor, Mode=OneWay}" FlowDirection="RightToLeft" Padding="0,0,10,0" TextWrapping="NoWrap" HorizontalAlignment="Right">
+                        <Paragraph x:Name="lineNumber" Foreground="#FF66CCFF">
+                            <Span>1</Span>
+                            <LineBreak/>
+                            <Span>2</Span>
+                            <LineBreak/>
+                            <Span>3</Span>
+                            <LineBreak/>
+                            <Span>4</Span>
+                            <LineBreak/>
+                            <Span>5</Span>
+                            <LineBreak/>
+                            <Run>65536</Run>
+                            <LineBreak/>
+                        </Paragraph>
+                    </RichTextBlock>
+                </Grid>
+                <RichTextBlockOverflow>
+                </RichTextBlockOverflow>
+                <RichTextBlock SelectionHighlightColor="{Binding SelectionHighlightColor, ElementName=sarEditor}" HorizontalAlignment="Left" VerticalAlignment="Top" MinWidth="{Binding ActualWidth, ElementName=sarEditor, Mode=OneWay}" MinHeight="{Binding ActualHeight, ElementName=sarEditor, Mode=OneWay}" Margin="6,0,0,0" >
+                    <Paragraph x:Name="text">
+                        <Span>abcdefghijklmnopqrstuvwxyz</Span>
+                        <InlineUIContainer>
+                            <Grid Width="1" Height="16" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,-4">
+                                <Grid Height="100" Width="1" Background="Red"></Grid>
+                            </Grid>
+                        </InlineUIContainer>
+                        <Span>abcdefghijklmnopqrstuvwxyz</Span>
+                        <LineBreak/>
+                        <Span>abcdefghijklmnopqrstuvwxyz</Span>
+                        <LineBreak/>
+                        <Span>abcdefghijklmnopqrstuvwxyz</Span>
+                        <LineBreak/>
+                        <Span>abcdefghijklmnopqrstuvwxyz</Span>
+                        <LineBreak/>
+                        <Span>abcdefghijklmnopqrstuvwxyz</Span>
+                        <LineBreak/>
+                        <Span>abcdefghijklmnopqrstuvwxyz</Span>
+                        <LineBreak/>
+                    </Paragraph>
+                </RichTextBlock>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
